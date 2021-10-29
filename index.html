@@ -5,9 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- css -->
     <link rel="stylesheet" href="style.css">
-
-    <title>stimulus vouchers</title>
+    <!-- js -->
+    <script src="Mao.js"></script>
+    <script src="main.js"></script>
+    <title>振興五倍加碼券速查</title>
 </head>
 
 <body>
@@ -16,9 +21,26 @@
 
         <div class="content">
             <div class="input-box">
-                <input type="text" placeholder="請填寫身分證 或 至少末3碼 ">
-                <button>查詢</button>
+                <input type="email" placeholder="請填寫身分證 或 末3碼" id="code" autocomplete=”off” value="">
+                <button onclick="query()">查詢</button>
             </div>
+
+            <div class="type">
+                <span>五倍券登記類型 : </span>
+                <div class="item-radio">
+                    <input type="radio" value="" name="type" checked="checked">
+                    <span>不限</span>
+                </div>
+                <div class="item-radio">
+                    <input type="radio" value="1" name="type">
+                    <span>數位</span>
+                </div>
+                <div class="item-radio">
+                    <input type="radio" value="0" name="type">
+                    <span>紙本</span>
+                </div>
+            </div>
+
         </div>
 
         <div>

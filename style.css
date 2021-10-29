@@ -32,13 +32,15 @@ body {
     width: 800px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap
 }
 
 .input-box {
     display: flex;
     justify-content: center;
     margin-top: 30px;
-    width: 80%;
+    width: 100%;
 }
 
 .input-box input {
@@ -46,7 +48,7 @@ body {
     line-height: 25px;
     padding-left: 10px;
     border: 1px solid #333;
-    border-color: rgba(228, 0, 77, .6);
+    border-color: rgba(70, 69, 69, 0.6);
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     font-weight: 400;
@@ -57,9 +59,21 @@ body {
 .input-box button {
     padding: 5px 10px 5px 10px;
     border: 1px solid #333;
-    border-color: rgba(228, 0, 77, .6);
+    border-color: rgba(70, 69, 69, 0.6);
     color: #fff;
-    background: linear-gradient(to bottom, #e4004e 0, #9a0430 100%);
+    background: linear-gradient(to bottom, #817f81 0, #363636 100%);
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+}
+
+.type {
+    margin-top: 30px;
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.type .item-radio {
+    margin: 0 10px;
 }
