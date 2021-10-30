@@ -1,3 +1,43 @@
+//檢查解析度
+$(document).ready(function() {
+
+    let 螢幕寬度 = document.body.clientWidth;
+    let 螢幕高度 = document.body.clientHeight;
+    $('.card').html(螢幕寬度 + ',' + 螢幕高度);
+    //console.log(螢幕寬度, 螢幕高度)
+
+    if (螢幕寬度 < 1024) {
+        //小於 400 大於 300
+        if (螢幕寬度 > 300 && 螢幕寬度 <= 400) {
+            $('.card').css('width', '320px ');
+            $('.card').css('height', '600px ');
+            $('.content').css('width', '320px ');
+            $('.type').css('flex-wrap', 'wrap')
+            $('.type').css('width', '40%')
+            $('.type').css('margin-top', '5px')
+            $('.type').css('margin-bottom', '5px')
+            $('#result-title').css('margin-top', '5px')
+            $('#result-title').css('font-size', '28px')
+        }
+
+        //小於 1024 大於 800
+        if (螢幕寬度 > 800 && 螢幕寬度 <= 1024) {
+            $('.card').css('zoom', '1.2')
+            $('.card').css('width', '800px ');
+            $('.card').css('height', '600px ');
+            $('.content').css('width', '800px ');
+            // $('.type').css('flex-wrap', 'wrap')
+            // $('.type').css('width', '40%')
+            $('.type').css('margin-top', '10px')
+            $('.type').css('margin-bottom', '10px')
+            $('#result-title').css('margin-top', '5px')
+            $('#result-title').css('font-size', '32px')
+        }
+    }
+
+})
+
+
 //宣告變數
 
 //第一周
@@ -237,44 +277,3 @@ window.addEventListener('keydown', function(e) {
         }
     }
 });
-
-
-
-//檢查解析度
-$(document).ready(function() {
-
-    let 螢幕寬度 = document.body.clientWidth;
-    let 螢幕高度 = document.body.clientHeight;
-    $('.card').html(螢幕寬度 + ',' + 螢幕高度);
-    //console.log(螢幕寬度, 螢幕高度)
-
-    if (螢幕寬度 < 1024) {
-        //小於 400 大於 300
-        if (螢幕寬度 > 300 && 螢幕寬度 <= 400) {
-            $('.card').css('width', '320px ');
-            $('.card').css('height', '600px ');
-            $('.content').css('width', '320px ');
-            $('.type').css('flex-wrap', 'wrap')
-            $('.type').css('width', '40%')
-            $('.type').css('margin-top', '5px')
-            $('.type').css('margin-bottom', '5px')
-            $('#result-title').css('margin-top', '5px')
-            $('#result-title').css('font-size', '28px')
-        }
-
-        //小於 1024 大於 800
-        if (螢幕寬度 > 800 && 螢幕寬度 <= 1024) {
-            $('.card').css('zoom', '1.2')
-            $('.card').css('width', '800px ');
-            $('.card').css('height', '600px ');
-            $('.content').css('width', '800px ');
-            // $('.type').css('flex-wrap', 'wrap')
-            // $('.type').css('width', '40%')
-            $('.type').css('margin-top', '10px')
-            $('.type').css('margin-bottom', '10px')
-            $('#result-title').css('margin-top', '5px')
-            $('#result-title').css('font-size', '32px')
-        }
-    }
-
-})
