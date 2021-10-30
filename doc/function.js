@@ -245,7 +245,7 @@ $(document).ready(function() {
 
     let 螢幕寬度 = document.body.clientWidth;
     let 螢幕高度 = document.body.clientHeight;
-    $('.card').html(螢幕寬度 + ',' + 螢幕高度);
+    //$('.card').html(螢幕寬度 + ',' + 螢幕高度);
     //console.log(螢幕寬度, 螢幕高度)
 
     if (螢幕寬度 < 1024) {
