@@ -57,7 +57,7 @@ var week4 = {
 function query() {
     let code = $('#code').val()
     let type = $('input[name=type]:checked').val()
-    console.log('code = ' + code, ' type=' + type)
+        //console.log('code = ' + code, ' type=' + type)
 
     //檢查輸入只能英數
     if (!Mao.verify.EnglishNumberVerify(code)) {
@@ -74,7 +74,7 @@ function query() {
 
     //剛好10碼
     if (code.length == 10) {
-        console.log('剛好十碼')
+        //console.log('剛好十碼')
         Comparison(code, type)
         return
     }
@@ -87,7 +87,7 @@ function query() {
             $('#code').val('');
             return
         } else {
-            console.log('剛好三碼')
+            //console.log('剛好三碼')
             Comparison(code, type)
             return
         }
@@ -97,9 +97,8 @@ function query() {
 
 //比對
 function Comparison(code, type) {
-
-
-
+    //先清除html物件
+    //$('.result').empty();
 
     //紀錄訊息
     let msg = [];
@@ -205,7 +204,21 @@ function Comparison(code, type) {
     }
 
 
-    console.log(msg);
+    //console.log(msg);
+
+    if (msg.length > 0) {
+        if (msg.length >= 16) {
+            $('.result').css('overflow-y', 'scroll ');
+        }
+        for (let i = 0; i < msg.length; i++) {
+            //組合字串
+            let str = '【第 ' + msg[i]['周次'] + ' 周 】' + msg[i]['券種'] + ' 號碼 : 【' + msg[i]['號碼'] + '】';
+            //加入
+            $('.result').append('<div class="win">' + str + '</div>')
+        }
+    } else {
+        $('.result').append('<p class="lose">很抱歉，您都沒有中獎</p>')
+    }
 }
 
 
@@ -224,3 +237,44 @@ window.addEventListener('keydown', function(e) {
         }
     }
 });
+
+
+
+//檢查解析度
+$(document).ready(function() {
+
+    let 螢幕寬度 = document.body.clientWidth;
+    let 螢幕高度 = document.body.clientHeight;
+
+    //console.log(螢幕寬度, 螢幕高度)
+
+    if (螢幕寬度 < 1024) {
+        //小於 400 大於 300
+        if (螢幕寬度 > 300 && 螢幕寬度 <= 400) {
+            $('.card').css('width', '320px ');
+            $('.card').css('height', '600px ');
+            $('.content').css('width', '320px ');
+            $('.type').css('flex-wrap', 'wrap')
+            $('.type').css('width', '40%')
+            $('.type').css('margin-top', '5px')
+            $('.type').css('margin-bottom', '5px')
+            $('#result-title').css('margin-top', '5px')
+            $('#result-title').css('font-size', '28px')
+        }
+
+        //小於 1024 大於 800
+        if (螢幕寬度 > 800 && 螢幕寬度 <= 1024) {
+            $('.card').css('zoom', '1.2')
+            $('.card').css('width', '800px ');
+            $('.card').css('height', '600px ');
+            $('.content').css('width', '800px ');
+            // $('.type').css('flex-wrap', 'wrap')
+            // $('.type').css('width', '40%')
+            $('.type').css('margin-top', '10px')
+            $('.type').css('margin-bottom', '10px')
+            $('#result-title').css('margin-top', '5px')
+            $('#result-title').css('font-size', '32px')
+        }
+    }
+
+})

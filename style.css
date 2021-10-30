@@ -67,7 +67,8 @@ body {
 }
 
 .type {
-    margin-top: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     display: flex;
     width: 50%;
     justify-content: center;
@@ -76,4 +77,41 @@ body {
 
 .type .item-radio {
     margin: 0 10px;
+}
+
+.line {
+    background-color: rgb(153, 153, 153, 0.5);
+    height: 1px;
+    border: none;
+}
+
+.result {
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 500px;
+}
+
+.lose {
+    margin: 10px 0;
+}
+
+.lose::before {
+    content: '😭 ';
+}
+
+.win {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.win::before {
+    content: '🎉 ';
+}
+
+.result-title {
+    margin-top: 20px;
 }
