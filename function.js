@@ -1,43 +1,3 @@
-//檢查解析度
-$(document).ready(function() {
-
-    let 螢幕寬度 = document.body.clientWidth;
-    let 螢幕高度 = document.body.clientHeight;
-    //$('.card').html(螢幕寬度 + ',' + 螢幕高度);
-    //console.log(螢幕寬度, 螢幕高度)
-
-    if (螢幕寬度 < 1024) {
-        //小於 400 大於 300
-        if (螢幕寬度 > 300 && 螢幕寬度 <= 400) {
-            $('.card').css('width', '320px ');
-            $('.card').css('height', '600px ');
-            $('.content').css('width', '320px ');
-            $('.type').css('flex-wrap', 'wrap')
-            $('.type').css('width', '40%')
-            $('.type').css('margin-top', '5px')
-            $('.type').css('margin-bottom', '5px')
-            $('#result-title').css('margin-top', '5px')
-            $('#result-title').css('font-size', '28px')
-        }
-
-        //小於 1024 大於 800
-        if (螢幕寬度 > 800 && 螢幕寬度 <= 1024) {
-            $('.card').css('zoom', '1.2')
-            $('.card').css('width', '800px ');
-            $('.card').css('height', '600px ');
-            $('.content').css('width', '800px ');
-            // $('.type').css('flex-wrap', 'wrap')
-            // $('.type').css('width', '40%')
-            $('.type').css('margin-top', '10px')
-            $('.type').css('margin-bottom', '10px')
-            $('#result-title').css('margin-top', '5px')
-            $('#result-title').css('font-size', '32px')
-        }
-    }
-
-})
-
-
 //宣告變數
 
 //第一周
@@ -138,7 +98,7 @@ function query() {
 //比對
 function Comparison(code, type) {
     //先清除html物件
-    //$('.result').empty();
+    $('.result').empty();
 
     //紀錄訊息
     let msg = [];
@@ -201,13 +161,13 @@ function Comparison(code, type) {
                     }
                 } else {
                     let 類型 = type == 1 ? '數位' : '紙本';
-                    let 當前券種類型 = 當周[當前券種][類型[i]];
+                    let 當前券種類型 = 當周[當前券種][類型];
                     //2碼
                     let 兩號碼 = 當前券種類型.indexOf(two)
                     if (兩號碼 != -1) {
                         msg.push({
                             周次: (w + 1),
-                            券種: [券種[x]][0] + '_' + 類型[i],
+                            券種: [券種[x]][0] + '_' + 類型,
                             號碼: 當前券種類型[兩號碼],
                         })
                     }
@@ -216,7 +176,7 @@ function Comparison(code, type) {
                     if (三號碼 != -1) {
                         msg.push({
                             周次: (w + 1),
-                            券種: [券種[x]][0] + '_' + 類型[i],
+                            券種: [券種[x]][0] + '_' + 類型,
                             號碼: 當前券種類型[三號碼],
                         })
                     }
